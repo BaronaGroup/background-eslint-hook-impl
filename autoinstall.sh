@@ -14,7 +14,7 @@ if (!package.scripts) package.scripts = {}
 if (!package.scripts.eslint) package.scripts.eslint = 'eslint'
 package.scripts['background-eslint-hook-impl'] = 'background-eslint-hook-impl'
 if (!package['post-commit']) package['post-commit'] = []
-if (!package['post-commit'].includes('background-eslint-hook-impl')) package['post-commit'].push('background-eslint-hook-impl')
+if (package['post-commit'].indexOF('background-eslint-hook-impl') === -1) package['post-commit'].push('background-eslint-hook-impl')
 
 fs.writeFileSync('./package.json', JSON.stringify(package, null, 2), 'UTF-8')
 

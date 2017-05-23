@@ -26,7 +26,7 @@ but the eslint process for the previous commit is automatically killed.
 
 ### Autoinstall
 
-    bash <<< $(curl https://github.com/BaronaGroup/background-eslint-hook-impl/blob/master/autoinstall.sh)
+    bash <<< $(curl https://raw.githubusercontent.com/BaronaGroup/background-eslint-hook-impl/master/autoinstall.sh)
 
 
 ### node.js
