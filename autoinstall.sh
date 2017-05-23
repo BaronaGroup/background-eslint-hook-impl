@@ -8,7 +8,7 @@ fi
 
 npm install --save-dev https://github.com/BaronaGroup/background-eslint-hook-impl.git#master post-commit
 node <<EOF
-
+var fs = require('fs')
 var package = require('./package.json')
 if (!package.scripts) package.scripts = {}
 if (!package.scripts.eslint) package.scripts.eslint = 'eslint'
