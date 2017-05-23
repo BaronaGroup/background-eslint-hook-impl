@@ -24,6 +24,11 @@ but the eslint process for the previous commit is automatically killed.
 
 ## Installation as a post-commit hook
 
+### Autoinstall
+
+    bash <<< $(curl https://github.com/BaronaGroup/background-eslint-hook-impl/blob/master/autoinstall.sh)
+
+
 ### node.js
 
 
