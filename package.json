@@ -1,0 +1,16 @@
+{
+  "name": "background-eslint-hook-impl",
+  "private": true,
+  "version": "0.0.1",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "main": "./server/app",
+  "bin": {"background-eslint-hook-impl": "./hook-impl.sh"},
+  "scripts": {
+  },
+  "engines": {
+    "node": ">=4.5"
+  }
+}
