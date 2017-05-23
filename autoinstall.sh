@@ -11,7 +11,7 @@ node <<EOF
 var fs = require('fs')
 var package = require('./package.json')
 if (!package.scripts) package.scripts = {}
-if (!package.scripts.eslint) package.scripts.eslint = 'eslint'
+if (!package.scripts.eslint) package.scripts.eslint = 'eslint .'
 package.scripts['background-eslint-hook-impl'] = 'background-eslint-hook-impl'
 if (!package['post-commit']) package['post-commit'] = []
 if (package['post-commit'].indexOf('background-eslint-hook-impl') === -1) package['post-commit'].push('background-eslint-hook-impl')

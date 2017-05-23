@@ -42,7 +42,7 @@ Update package.json
 At its simplest, the things needed in package.json look more or less like this:
 
      "scripts": {
-        "eslint": "eslint",
+        "eslint": "eslint .",
         "background-eslint-hook-impl": "background-eslint-hook-impl"
      },
      "post-commit": [
