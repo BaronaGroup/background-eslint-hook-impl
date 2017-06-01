@@ -25,7 +25,7 @@ which-silent() {
 PIDFILE=/tmp/eslint-$(pwd | (which-silent md5sum && md5sum || md5) | cut -d' ' -f1) 2>/dev/null
 if [ -e $PIDFILE ]
 then
-  if test $(find $PIDFILE -mtime -30s)
+  if test $(find $PIDFILE -newermt '30 seconds ago')
   then
     pkill -g $(cat $PIDFILE)
   fi
