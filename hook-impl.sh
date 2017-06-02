@@ -1,10 +1,10 @@
 #!/bin/bash
 
 notify() {
-  if which -s osascript
+  if which-silent osascript
   then
     osascript -e 'display notification "'"$2"'" with title "'"$1"'"'
-  elif which -s notify-send
+  elif which-silent notify-send
   then
     notify-send "$1" "$2"
   fi
@@ -18,16 +18,20 @@ notify-success() {
   notify "Eslint success: $(basename $(pwd))" "Eslint was completed without issues for $(basename $(pwd))"
 }
 
-PIDFILE=/tmp/eslint-$(pwd | (which -s md5sum && md5sum || md5)) 2>/dev/null
+which-silent() {
+  which $1 1>/dev/null
+}
+
+PIDFILE=/tmp/eslint-$(pwd | (which-silent md5sum && md5sum || md5) | cut -d' ' -f1) 2>/dev/null
 if [ -e $PIDFILE ]
 then
-  if test $(find $PIDFILE -mtime -30s)
+  if test $(find $PIDFILE -newermt '30 seconds ago')
   then
     pkill -g $(cat $PIDFILE)
   fi
 fi
 
-if which -s osascript || which -s notify-send
+if which-silent osascript || which-silent notify-send
 then
   (
     npm run-script eslint --silent &>/dev/null && notify-success || notify-failure
