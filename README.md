@@ -1,4 +1,4 @@
-# background-eslint-hook-impl
+# background-eslint-hook
 
 This repository contains a file that is meant to be used as a post-commit hook to automatically run 
 eslint in the background.
@@ -34,7 +34,7 @@ but the eslint process for the previous commit is automatically killed.
 
 Run
 
-    npm install --save-dev https://github.com/BaronaGroup/background-eslint-hook-impl.git#master
+    npm install --save-dev background-eslint-hook
     npm install --save-dev post-commit
 
 Update package.json
@@ -43,10 +43,10 @@ At its simplest, the things needed in package.json look more or less like this:
 
      "scripts": {
         "eslint": "eslint .",
-        "background-eslint-hook-impl": "background-eslint-hook-impl"
+        "background-eslint-hook": "background-eslint-hook"
      },
      "post-commit": [
-        "background-eslint-hook-impl"
+        "background-eslint-hook"
      ]    
 
 The script `eslint` will be invoked by the hook, and can be modified to include whichever parameters

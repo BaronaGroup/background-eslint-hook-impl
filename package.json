@@ -1,16 +1,16 @@
 {
-  "name": "background-eslint-hook-impl",
-  "private": true,
-  "version": "0.0.1",
-  "dependencies": {
+  "name": "background-eslint-hook",
+  "version": "1.0.0",
+  "description": "Runs eslint in the background when invoked. Meant to be used from a git hook.",
+  "homepage": "https://github.com/BaronaGroup/background-eslint-hook-impl",
+  "repository": {
+    "type": "git",
+    "url": "BaronaGroup/background-eslint-hook-impl"
   },
-  "devDependencies": {
+  "author": {
+    "name": "Tapani Haka"
   },
+  "license": "MIT",
   "main": "./server/app",
-  "bin": {"background-eslint-hook-impl": "./hook-impl.sh"},
-  "scripts": {
-  },
-  "engines": {
-    "node": ">=4.5"
-  }
+  "bin": {"background-eslint-hook": "./hook-impl.sh"}
 }
